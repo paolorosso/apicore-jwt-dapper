@@ -40,11 +40,10 @@ namespace Api
                         {
                             ValidateLifetime = true,
                             ValidateIssuerSigningKey = true,
-                            ValidateAudience = false,
-                            ValidateIssuer = false,
+                            ValidateAudience = false,       // validate the user who generates token is authorized
+                            ValidateIssuer = false,         // validate the server that generates the token
                             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(LOAD.Chiave)),
                             RequireSignedTokens = true,
-
                         };
                     });
 
